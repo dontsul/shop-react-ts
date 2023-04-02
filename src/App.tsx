@@ -1,58 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import Home from './componets/pages/Home';
+import Basket from './componets/pages/Basket';
+import Selected from './componets/pages/Selected';
+import { Header } from './componets/header/Header';
+import { fetchData } from './features/slices/autosSlice';
+import { getDatas } from './thunks/getDatas';
+import { useAppDispatch } from './app/hooks';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchData());
+        dispatch(getDatas());
+    }, []);
+
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Header />}>
+                        <Route index element={<Home />} />
+                        <Route path="basket" element={<Basket />}></Route>
+                        <Route path="selected" element={<Selected />}></Route>
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;

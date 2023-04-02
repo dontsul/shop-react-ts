@@ -1,0 +1,29 @@
+.elemBasket {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 30px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+    }
+    .img {
+        height: 115px;
+        width: 160px;
+    }
+    .title {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+    .icon {
+        font-size: 32px;
+        color: #ca3c3c;
+        cursor: pointer;
+    }
+}

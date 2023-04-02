@@ -1,0 +1,9 @@
+.wrapperBasket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .listAutos {
+        display: flex;
+        flex-direction: column;
+    }
+}

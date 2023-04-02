@@ -1,0 +1,20 @@
+.wrapFoot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    .price {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .star {
+        position: absolute;
+        top: 235px;
+        right: 15px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .activeStar {
+        color: yellow;
+    }
+}

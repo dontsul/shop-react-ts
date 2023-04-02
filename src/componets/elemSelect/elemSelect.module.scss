@@ -1,0 +1,29 @@
+.elemSelect {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 30px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+    }
+    .img {
+        height: 130px;
+        width: 200px;
+    }
+
+    .starS {
+        position: absolute;
+        top: 235px;
+        right: 15px;
+        font-size: 22px;
+    }
+    .activeStarS {
+        color: yellow;
+        font-size: 28px;
+        cursor: pointer;
+    }
+}

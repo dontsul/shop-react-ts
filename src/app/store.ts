@@ -1,17 +1,24 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+
+import { autosReducer } from '../features/slices/autosSlice';
+import { autoSelectedReducer } from '../features/slices/autoSelectedSlice';
+import { autoBasketReducer } from '../features/slices/autoBasketSlice';
+import { autoStateReducer } from '../features/slices/autoStateSlice';
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+    reducer: {
+        autos: autosReducer,
+        autoSelected: autoSelectedReducer,
+        autoBasket: autoBasketReducer,
+        autoState: autoStateReducer,
+    },
 });
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
+    ReturnType,
+    RootState,
+    unknown,
+    Action<string>
 >;

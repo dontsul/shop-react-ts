@@ -1,0 +1,20 @@
+.wrapperForm {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 40px;
+
+    .title {
+        text-align: center;
+    }
+    .input {
+        width: 50%;
+    }
+    .btn {
+        margin-top: 40px;
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+}
